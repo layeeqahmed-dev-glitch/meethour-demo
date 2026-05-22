@@ -4,15 +4,14 @@
   "config": {
     "actionUrl": "https://meethour-demo.vercel.app/create-meeting",
     "isPublished": true,
-
     "supportedClients": [
       {
         "client": "WORKFLOWS"
       }
     ],
-
-    "objectTypes": ["CONTACT"],
-
+    "objectTypes": [
+      "CONTACT"
+    ],
     "inputFields": [
       {
         "typeDefinition": {
@@ -20,66 +19,92 @@
           "type": "string",
           "fieldType": "date"
         },
-        "supportedValueTypes": ["OBJECT_PROPERTY"],
+        "supportedValueTypes": [
+          "OBJECT_PROPERTY"
+        ],
         "isRequired": true
       },
-
+      {
+        "typeDefinition": {
+          "name": "firstname",
+          "type": "string",
+          "fieldType": "text"
+        },
+        "supportedValueTypes": [
+          "OBJECT_PROPERTY"
+        ],
+        "isRequired": false
+      },
+      {
+        "typeDefinition": {
+          "name": "lastname",
+          "type": "string",
+          "fieldType": "text"
+        },
+        "supportedValueTypes": [
+          "OBJECT_PROPERTY"
+        ],
+        "isRequired": false
+      },
       {
         "typeDefinition": {
           "name": "provide_available_time",
           "type": "string",
           "fieldType": "text"
         },
-        "supportedValueTypes": ["OBJECT_PROPERTY"],
+        "supportedValueTypes": [
+          "OBJECT_PROPERTY"
+        ],
         "isRequired": true
       },
-
       {
         "typeDefinition": {
           "name": "meeting_meridiem",
           "type": "string",
           "fieldType": "text"
         },
-        "supportedValueTypes": ["OBJECT_PROPERTY"],
+        "supportedValueTypes": [
+          "OBJECT_PROPERTY"
+        ],
         "isRequired": true
       },
-
       {
         "typeDefinition": {
           "name": "timezone",
           "type": "string",
           "fieldType": "text"
         },
-        "supportedValueTypes": ["OBJECT_PROPERTY"],
+        "supportedValueTypes": [
+          "OBJECT_PROPERTY"
+        ],
         "isRequired": true
       },
-
       {
         "typeDefinition": {
           "name": "email",
           "type": "string",
           "fieldType": "text"
         },
-        "supportedValueTypes": ["OBJECT_PROPERTY"],
+        "supportedValueTypes": [
+          "OBJECT_PROPERTY"
+        ],
         "isRequired": true
       }
     ],
-
     "labels": {
       "en": {
         "actionName": "Action MeetHour Demo",
-
         "actionDescription": "Schedules MeetHour meeting using mapped HubSpot properties",
-
-        "actionCardContent": "Schedule {{meeting_name}}",
+        "actionCardContent": "Schedule meeting",
 
         "inputFieldLabels": {
           "select_date_for_demo": "Select Date for Demo",
           "provide_available_time": "Provide Available Time",
           "meeting_meridiem": "Meeting Meridiem",
           "timezone": "Timezone",
-          "meeting_name": "Meeting Name",
-          "email": "Email"
+          "email": "Email",
+          "firstname": "First Name",
+          "lastname": "Last Name"
         },
 
         "inputFieldDescriptions": {
@@ -87,8 +112,9 @@
           "provide_available_time": "Mapped available time property",
           "meeting_meridiem": "Mapped AM/PM property",
           "timezone": "Mapped timezone property",
-          "meeting_name": "Mapped meeting name property",
-          "email": "Mapped contact email property"
+          "email": "Mapped contact email property",
+          "firstname": "Mapped first name",
+          "lastname": "Mapped last name"
         }
       }
     }
