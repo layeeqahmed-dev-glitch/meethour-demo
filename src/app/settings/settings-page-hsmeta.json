@@ -1,7 +1,0 @@
-{
-  "uid": "meethour_workflow_settings",
-  "type": "settings",
-  "config": {
-    "entrypoint": "/app/settings/SettingsPage.tsx"
-  }
-}

@@ -56,16 +56,6 @@
 
       {
         "typeDefinition": {
-          "name": "meeting_name",
-          "type": "string",
-          "fieldType": "text"
-        },
-        "supportedValueTypes": ["OBJECT_PROPERTY"],
-        "isRequired": true
-      },
-
-      {
-        "typeDefinition": {
           "name": "email",
           "type": "string",
           "fieldType": "text"
