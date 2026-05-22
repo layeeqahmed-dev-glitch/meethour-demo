@@ -1,0 +1,130 @@
+{
+  "uid": "meethour_workflow_workflow_action",
+  "type": "workflow-action",
+  "config": {
+    "actionUrl": "https://taxonomic-wonky-carley.ngrok-free.dev/create-meeting",
+    "isPublished": true,
+    "supportedClients": [
+      {
+        "client": "WORKFLOWS"
+      }
+    ],
+    "inputFields": [
+      {
+        "typeDefinition": {
+          "name": "meeting_name",
+          "type": "string",
+          "fieldType": "text"
+        },
+        "supportedValueTypes": ["STATIC_VALUE", "CONTACT_PROPERTY"],
+        "isRequired": true
+      },
+      {
+        "typeDefinition": {
+          "name": "meeting_date",
+          "type": "string",
+          "fieldType": "text"
+        },
+        "supportedValueTypes": ["CONTACT_PROPERTY"],
+        "isRequired": true
+      },
+      {
+        "typeDefinition": {
+          "name": "meeting_time",
+          "type": "string",
+          "fieldType": "text"
+        },
+        "supportedValueTypes": ["CONTACT_PROPERTY"],
+        "isRequired": true
+      },
+      {
+        "typeDefinition": {
+          "name": "meeting_meridiem",
+          "type": "enumeration",
+          "fieldType": "select",
+          "options": [
+            { "value": "AM", "label": "AM" },
+            { "value": "PM", "label": "PM" }
+          ]
+        },
+        "supportedValueTypes": ["STATIC_VALUE", "CONTACT_PROPERTY"],
+        "isRequired": true
+      },
+      {
+        "typeDefinition": {
+          "name": "timezone",
+          "type": "string",
+          "fieldType": "text"
+        },
+        "supportedValueTypes": ["STATIC_VALUE", "CONTACT_PROPERTY"],
+        "isRequired": true
+      },
+      {
+        "typeDefinition": {
+          "name": "passcode",
+          "type": "string",
+          "fieldType": "text"
+        },
+        "supportedValueTypes": ["STATIC_VALUE"],
+        "isRequired": true
+      },
+      {
+        "typeDefinition": {
+          "name": "agenda",
+          "type": "string",
+          "fieldType": "textarea"
+        },
+        "supportedValueTypes": ["STATIC_VALUE", "CONTACT_PROPERTY"],
+        "isRequired": false
+      },
+      {
+        "typeDefinition": {
+          "name": "duration_hr",
+          "type": "number",
+          "fieldType": "number"
+        },
+        "supportedValueTypes": ["STATIC_VALUE"],
+        "isRequired": false
+      },
+      {
+        "typeDefinition": {
+          "name": "duration_min",
+          "type": "number",
+          "fieldType": "number"
+        },
+        "supportedValueTypes": ["STATIC_VALUE"],
+        "isRequired": false
+      }
+    ],
+    "labels": {
+      "en": {
+        "actionName": "Action MeetHour Demo",
+        "actionDescription": "Schedules a MeetHour meeting when a contact submits the demo request form",
+        "actionCardContent": "Schedule meeting on {{meeting_date}} at {{meeting_time}} {{meeting_meridiem}}",
+        "inputFieldLabels": {
+          "meeting_name": "Meeting Name",
+          "meeting_date": "Meeting Date (dd-MM-yyyy or yyyy-MM-dd)",
+          "meeting_time": "Meeting Time (hh:mm)",
+          "meeting_meridiem": "AM / PM",
+          "timezone": "Timezone",
+          "passcode": "Meeting Passcode",
+          "agenda": "Agenda",
+          "duration_hr": "Duration (Hours)",
+          "duration_min": "Duration (Minutes)"
+        },
+        "inputFieldDescriptions": {
+          "meeting_name": "Name of the meeting",
+          "meeting_date": "Date mapped from select_date_for_demo",
+          "meeting_time": "Time mapped from provide_available_time",
+          "meeting_meridiem": "Mapped from meeting_merideim field",
+          "timezone": "Mapped from timezone field",
+          "passcode": "Static passcode for the meeting",
+          "agenda": "Optional meeting agenda",
+          "duration_hr": "Duration in hours (0-23)",
+          "duration_min": "Duration in minutes (0-59)"
+        }
+      }
+    },
+    "objectTypes": ["CONTACT"]
+  }
+}
