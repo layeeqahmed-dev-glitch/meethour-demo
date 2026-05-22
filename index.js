@@ -77,6 +77,10 @@ function convertTime(timestamp) {
   };
 }
 
+app.post('/',(req,res)=>{
+    res.send("working fine...")
+})
+
 app.post('/create-meeting', async (req, res) => {
   try {
     const fields = req.body.fields || req.body;
