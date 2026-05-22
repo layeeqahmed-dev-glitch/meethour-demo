@@ -120,12 +120,6 @@ router.post('/create-meeting', async (req, res) => {
                     email:"ab.saif@meethour.io"
                 },
                 {
-                    first_name: "Shoeb",
-                    last_name: "Ahmad",
-                    email:"shoah@meethour.io"
-                }
-                ,
-                {
                     first_name: "Gopi",
                     last_name: "Yadav",
                     email:"g.yadav@meethour.io"
