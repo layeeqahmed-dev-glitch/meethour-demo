@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const axios = require('axios');
+app.use(express.json());
+
 
 const MEETHOUR_API = 'https://api.meethour.io/api/v1.2/meeting/schedulemeeting';
 const MEETHOUR_TOKEN_URL = 'https://api.meethour.io/oauth/token';
@@ -158,4 +160,4 @@ router.post('/create-meeting', async (req, res) => {
     }
 });
 
-module.exports = router;
+module.exports = app;
