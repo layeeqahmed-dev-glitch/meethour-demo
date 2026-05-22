@@ -2,129 +2,105 @@
   "uid": "meethour_workflow_workflow_action",
   "type": "workflow-action",
   "config": {
-    "actionUrl": "https://taxonomic-wonky-carley.ngrok-free.dev/create-meeting",
+    "actionUrl": "https://meethour-demo.vercel.app/create-meeting",
     "isPublished": true,
+
     "supportedClients": [
       {
         "client": "WORKFLOWS"
       }
     ],
+
+    "objectTypes": ["CONTACT"],
+
     "inputFields": [
       {
         "typeDefinition": {
-          "name": "meeting_name",
+          "name": "select_date_for_demo",
           "type": "string",
-          "fieldType": "text"
+          "fieldType": "date"
         },
-        "supportedValueTypes": ["STATIC_VALUE", "CONTACT_PROPERTY"],
+        "supportedValueTypes": ["OBJECT_PROPERTY"],
         "isRequired": true
       },
+
       {
         "typeDefinition": {
-          "name": "meeting_date",
+          "name": "provide_available_time",
           "type": "string",
           "fieldType": "text"
         },
-        "supportedValueTypes": ["CONTACT_PROPERTY"],
+        "supportedValueTypes": ["OBJECT_PROPERTY"],
         "isRequired": true
       },
-      {
-        "typeDefinition": {
-          "name": "meeting_time",
-          "type": "string",
-          "fieldType": "text"
-        },
-        "supportedValueTypes": ["CONTACT_PROPERTY"],
-        "isRequired": true
-      },
+
       {
         "typeDefinition": {
           "name": "meeting_meridiem",
-          "type": "enumeration",
-          "fieldType": "select",
-          "options": [
-            { "value": "AM", "label": "AM" },
-            { "value": "PM", "label": "PM" }
-          ]
+          "type": "string",
+          "fieldType": "text"
         },
-        "supportedValueTypes": ["STATIC_VALUE", "CONTACT_PROPERTY"],
+        "supportedValueTypes": ["OBJECT_PROPERTY"],
         "isRequired": true
       },
+
       {
         "typeDefinition": {
           "name": "timezone",
           "type": "string",
           "fieldType": "text"
         },
-        "supportedValueTypes": ["STATIC_VALUE", "CONTACT_PROPERTY"],
+        "supportedValueTypes": ["OBJECT_PROPERTY"],
         "isRequired": true
       },
+
       {
         "typeDefinition": {
-          "name": "passcode",
+          "name": "meeting_name",
           "type": "string",
           "fieldType": "text"
         },
-        "supportedValueTypes": ["STATIC_VALUE"],
+        "supportedValueTypes": ["OBJECT_PROPERTY"],
         "isRequired": true
       },
+
       {
         "typeDefinition": {
-          "name": "agenda",
+          "name": "email",
           "type": "string",
-          "fieldType": "textarea"
+          "fieldType": "text"
         },
-        "supportedValueTypes": ["STATIC_VALUE", "CONTACT_PROPERTY"],
-        "isRequired": false
-      },
-      {
-        "typeDefinition": {
-          "name": "duration_hr",
-          "type": "number",
-          "fieldType": "number"
-        },
-        "supportedValueTypes": ["STATIC_VALUE"],
-        "isRequired": false
-      },
-      {
-        "typeDefinition": {
-          "name": "duration_min",
-          "type": "number",
-          "fieldType": "number"
-        },
-        "supportedValueTypes": ["STATIC_VALUE"],
-        "isRequired": false
+        "supportedValueTypes": ["OBJECT_PROPERTY"],
+        "isRequired": true
       }
     ],
+
     "labels": {
       "en": {
         "actionName": "Action MeetHour Demo",
-        "actionDescription": "Schedules a MeetHour meeting when a contact submits the demo request form",
-        "actionCardContent": "Schedule meeting on {{meeting_date}} at {{meeting_time}} {{meeting_meridiem}}",
+
+        "actionDescription": "Schedules MeetHour meeting using mapped HubSpot properties",
+
+        "actionCardContent": "Schedule {{meeting_name}}",
+
         "inputFieldLabels": {
-          "meeting_name": "Meeting Name",
-          "meeting_date": "Meeting Date (dd-MM-yyyy or yyyy-MM-dd)",
-          "meeting_time": "Meeting Time (hh:mm)",
-          "meeting_meridiem": "AM / PM",
+          "select_date_for_demo": "Select Date for Demo",
+          "provide_available_time": "Provide Available Time",
+          "meeting_meridiem": "Meeting Meridiem",
           "timezone": "Timezone",
-          "passcode": "Meeting Passcode",
-          "agenda": "Agenda",
-          "duration_hr": "Duration (Hours)",
-          "duration_min": "Duration (Minutes)"
+          "meeting_name": "Meeting Name",
+          "email": "Email"
         },
+
         "inputFieldDescriptions": {
-          "meeting_name": "Name of the meeting",
-          "meeting_date": "Date mapped from select_date_for_demo",
-          "meeting_time": "Time mapped from provide_available_time",
-          "meeting_meridiem": "Mapped from meeting_merideim field",
-          "timezone": "Mapped from timezone field",
-          "passcode": "Static passcode for the meeting",
-          "agenda": "Optional meeting agenda",
-          "duration_hr": "Duration in hours (0-23)",
-          "duration_min": "Duration in minutes (0-59)"
+          "select_date_for_demo": "Mapped demo date property",
+          "provide_available_time": "Mapped available time property",
+          "meeting_meridiem": "Mapped AM/PM property",
+          "timezone": "Mapped timezone property",
+          "meeting_name": "Mapped meeting name property",
+          "email": "Mapped contact email property"
         }
       }
-    },
-    "objectTypes": ["CONTACT"]
+    }
   }
 }
