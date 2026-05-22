@@ -209,11 +209,28 @@ app.post(
                 agenda: `Demo meeting with ${meeting_name}`,
                 duration_hr: 1,
                 duration_min: 0,
+                send_calendar_invite:1,
+                is_show_portal:1,
                 hostusers: [
                     {
                         first_name: "Taher",
                         last_name: "Ahmed",
                         email: "taher@meethour.io",
+                    },
+                    {
+                        first_name: "Jaha zaib",
+                        last_name: "Faisal",
+                        email: "jz.jason@meethour.io",
+                    },
+                    {
+                        first_name: "Abdul",
+                        last_name: "Muqeet",
+                        email: "ab.muqeet@meethour.io",
+                    },
+                    {
+                        first_name: "Sattar",
+                        last_name: "Saif",
+                        email: "ab.saif@meethour.io",
                     },
                 ],
                 attend: [
