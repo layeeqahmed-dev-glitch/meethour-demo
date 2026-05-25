@@ -127,10 +127,7 @@ app.post(
             const email = (fields.email || "").trim();
 
             // FIX 1: If names don't exist, use email prefix so meeting_name isn't empty/generic
-            let meeting_name = `${firstName} ${lastName} Demo`.trim();
-            if (meeting_name === "Demo" && email) {
-                meeting_name = `${email.split("@")[0]} Demo`;
-            }
+            let meeting_name = `Request a demo with ${firstName} ${lastName}`.trim();
 
             const rawDate = fields.select_date_for_demo;
             const rawTime = fields.provide_available_time; // Expecting "04:00"
@@ -206,7 +203,7 @@ app.post(
                 meeting_meridiem,
                 timezone,
                 passcode: generatePasscode(),
-                agenda: `Demo meeting with ${meeting_name}`,
+                agenda: `Requested a demo of Meet Hour with ${firstName} ${lastName}`,
                 duration_hr: 1,
                 duration_min: 0,
                 send_calendar_invite:1,
