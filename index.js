@@ -162,21 +162,21 @@ app.post(
             const dd = String(dateObj.getUTCDate()).padStart(2, '0');
             const mm = String(dateObj.getUTCMonth() + 1).padStart(2, '0'); // Months are 0-indexed
             const yyyy = dateObj.getUTCFullYear();
-            
+
             const meeting_date = `${dd}-${mm}-${yyyy}`;
             console.log("📅 FINAL DATE:", meeting_date);
 
             // ======================
             // FIX 3: PARSE "04:00" TIME SAFELY
             // ======================
-            let meeting_time = rawTime; 
+            let meeting_time = rawTime;
             let meeting_meridiem = fields.meeting_meridiem || "AM";
 
             // If time contains explicit AM/PM already or needs adjusting to 12h format
             if (rawTime.includes(":")) {
                 const [strHours, strMinutes] = rawTime.split(":");
                 let hours = parseInt(strHours, 10);
-                
+
                 // If your client sends 24h format and doesn't rely strictly on meeting_meridiem property:
                 if (hours >= 12) {
                     meeting_meridiem = "PM";
@@ -190,8 +190,8 @@ app.post(
                 meeting_time = `${String(hours).padStart(2, '0')}:${strMinutes}`;
             }
 
-            console.log("⏰ FINAL TIME:", meeting_time);
-            console.log("🕐 MERIDIEM:", meeting_meridiem);
+            console.log("FINAL TIME:", meeting_time);
+            console.log("MERIDIEM:", meeting_meridiem);
 
             const token = await getValidToken();
             console.log("✅ TOKEN RECEIVED");
@@ -206,8 +206,8 @@ app.post(
                 agenda: `Requested a demo of Meet Hour with ${firstName} ${lastName}`,
                 duration_hr: 1,
                 duration_min: 0,
-                send_calendar_invite:1,
-                is_show_portal:1,
+                send_calendar_invite: 1,
+                is_show_portal: 1,
                 hostusers: [
                     {
                         first_name: "Taher",
@@ -232,9 +232,9 @@ app.post(
                 ],
                 attend: [
                     {
-                        first_name: meeting_name,
-                        last_name: "",
-                        email,
+                        first_name: firstName,   
+                        last_name: lastName,     
+                        email,                    
                     },
                 ],
             };
