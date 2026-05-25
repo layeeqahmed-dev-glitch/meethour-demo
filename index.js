@@ -221,11 +221,6 @@ app.post(
                         email: "jz.jason@meethour.io",
                     },
                     {
-                        first_name: "Abdul",
-                        last_name: "Muqeet",
-                        email: "ab.muqeet@meethour.io",
-                    },
-                    {
                         first_name: "Sattar",
                         last_name: "Saif",
                         email: "ab.saif@meethour.io",
