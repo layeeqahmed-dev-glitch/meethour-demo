@@ -209,6 +209,7 @@ app.post(
                 send_calendar_invite: 1,
                 is_show_portal: 1,
                 hostusers: [
+                    1701,
                     {
                         first_name: "Taher",
                         last_name: "Ahmed",
@@ -228,6 +229,12 @@ app.post(
                         first_name: "Sattar",
                         last_name: "Saif",
                         email: "ab.saif@meethour.io",
+                    },
+                    
+                    {
+                        first_name: "Gopi",
+                        last_name: "Yadav",
+                        email: "g.yadav@meethour.io",
                     },
                 ],
                 attend: [
